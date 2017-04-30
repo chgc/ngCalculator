@@ -1,24 +1,24 @@
 <div class="calculator">
-  <div class="calculator-display">0</div>
+  <div class="calculator-display">{{ displayValue }}</div>
   <div class="calculator-keypad">
     <div class="input-keys">
       <div class="function-keys">
-        <button class="calculator-key key-clear">AC</button>
-        <button class="calculator-key key-sign">±</button>
-        <button class="calculator-key key-percent">%</button>
+        <button class="calculator-key key-clear" (click)="clearDisplay()">AC</button>
+        <button class="calculator-key key-sign" (click)="toggleSign()">±</button>
+        <button class="calculator-key key-percent" (click)="inputPercent()">%</button>
       </div>
       <div class="digit-keys">
-        <button class="calculator-key key-0">0</button>
-        <button class="calculator-key key-dot">●</button>
-        <button class="calculator-key key-1">1</button>
-        <button class="calculator-key key-2">2</button>
-        <button class="calculator-key key-3">3</button>
-        <button class="calculator-key key-4">4</button>
-        <button class="calculator-key key-5">5</button>
-        <button class="calculator-key key-6">6</button>
-        <button class="calculator-key key-7">7</button>
-        <button class="calculator-key key-8">8</button>
-        <button class="calculator-key key-9">9</button>
+        <button class="calculator-key key-0" (click)="inputDigit(0)">0</button>
+        <button class="calculator-key key-dot" (click)="inputDot()">●</button>
+        <button class="calculator-key key-1" (click)="inputDigit(1)">1</button>
+        <button class="calculator-key key-2" (click)="inputDigit(2)">2</button>
+        <button class="calculator-key key-3" (click)="inputDigit(3)">3</button>
+        <button class="calculator-key key-4" (click)="inputDigit(4)">4</button>
+        <button class="calculator-key key-5" (click)="inputDigit(5)">5</button>
+        <button class="calculator-key key-6" (click)="inputDigit(6)">6</button>
+        <button class="calculator-key key-7" (click)="inputDigit(7)">7</button>
+        <button class="calculator-key key-8" (click)="inputDigit(8)">8</button>
+        <button class="calculator-key key-9" (click)="inputDigit(9)">9</button>
       </div>
     </div>
     <div class="operator-keys">
@@ -26,9 +26,7 @@
       <button class="calculator-key key-multiply">×</button>
       <button class="calculator-key key-subtract">−</button>
       <button class="calculator-key key-add">+</button>
-      <button class="calculator-key key-equals">
-        =
-      </button>
+      <button class="calculator-key key-equals"> =</button>
     </div>
   </div>
 </div>
