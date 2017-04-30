@@ -59,7 +59,7 @@ export class AppComponent {
 
   clearLastChar() {
     let currentValue = this.displayValue.substring(0, this.displayValue.length - 1) || '0';
-    if(currentValue.length === 1 && currentValue === '-'){
+    if (currentValue.length === 1 && currentValue === '-') {
       currentValue = '0';
     }
     this.displayValue = currentValue;
@@ -107,34 +107,35 @@ export class AppComponent {
   /*
   * 處理keyboard事件，數字按鍵對應到相對的功能上
   */
-  handleKeyDown(event: KeyboardEvent){
-     let { key } = event;
-      if (key === 'Enter')
-        key = '='
+  handleKeyDown(event: KeyboardEvent) {
+    let { key } = event;
+    console.log(key);
+    if (key === 'Enter') {
+      key = '='
+    }
 
-      if ((/\d/).test(key)) {
-        event.preventDefault()
-        this.inputDigit(parseInt(key, 10))
-      } else if (key in this.operations) {
-        event.preventDefault()
-        this.performOperator(key)
-      } else if (key === '.') {
-        event.preventDefault()
-        this.inputDot()
-      } else if (key === '%') {
-        event.preventDefault()
-        this.inputPercent()
-      } else if (key === 'Backspace') {
-        event.preventDefault()
-        this.clearLastChar()
-      } else if (key === 'Clear') {
-        event.preventDefault()
-
-        if (this.displayValue !== '0') {
-          this.clearDisplay()
-        } else {
-          this.clearAll()
-        }
+    if ((/\d/).test(key)) {
+      event.preventDefault()
+      this.inputDigit(parseInt(key, 10))
+    } else if (key in this.operations) {
+      event.preventDefault()
+      this.performOperator(key)
+    } else if (key === '.') {
+      event.preventDefault()
+      this.inputDot()
+    } else if (key === '%') {
+      event.preventDefault()
+      this.inputPercent()
+    } else if (key === 'Backspace') {
+      event.preventDefault()
+      this.clearLastChar()
+    } else if (key === 'Escape') {
+      event.preventDefault()
+      if (this.displayValue !== '0') {
+        this.clearDisplay()
+      } else {
+        this.clearAll()
       }
+    }
   }
 }
