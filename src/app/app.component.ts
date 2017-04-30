@@ -1,19 +1,17 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   displayValue: string = '0';
   private value?: number;
   private waitingForOperand: boolean = false;
   private operator: string = '';
 
   constructor() {}
-  ngOnInit() {}
-
   inputDigit(digit: number) {
     if (this.waitingForOperand) {
       this.waitingForOperand = false;
