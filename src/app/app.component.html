@@ -22,11 +22,11 @@
       </div>
     </div>
     <div class="operator-keys">
-      <button class="calculator-key key-divide">÷</button>
-      <button class="calculator-key key-multiply">×</button>
-      <button class="calculator-key key-subtract">−</button>
-      <button class="calculator-key key-add">+</button>
-      <button class="calculator-key key-equals"> =</button>
+      <button class="calculator-key key-divide" (click)="performOperator('/')">÷</button>
+      <button class="calculator-key key-multiply" (click)="performOperator('*')">×</button>
+      <button class="calculator-key key-subtract" (click)="performOperator('-')">−</button>
+      <button class="calculator-key key-add" (click)="performOperator('+')">+</button>
+      <button class="calculator-key key-equals" (click)="performOperator('=')"> =</button>
     </div>
   </div>
 </div>
